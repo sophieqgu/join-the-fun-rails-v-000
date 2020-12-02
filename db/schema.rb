@@ -17,11 +17,13 @@ ActiveRecord::Schema.define(version: 20140212205318) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rides", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index [nil], name: "index_rides_on_passenger_id"
-    t.index [nil], name: "index_rides_on_taxi_id"
+  create_table "passengers_ta", id: false, force: :cascade do |t|
+    t.integer  "passenger_id", null: false
+    t.integer  "tum_id",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["passenger_id"], name: "index_passengers_ta_on_passenger_id"
+    t.index [nil], name: "index_passengers_ta_on_taxi_id"
   end
 
   create_table "taxis", force: :cascade do |t|
