@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212205242) do
-
-  create_table "passengers_ta", id: false, force: :cascade do |t|
-    t.integer  "passenger_id", null: false
-    t.integer  "tum_id",       null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["passenger_id"], name: "index_passengers_ta_on_passenger_id"
-    t.index [nil], name: "index_passengers_ta_on_taxi_id"
-  end
+ActiveRecord::Schema.define(version: 20140212204456) do
 
   create_table "taxis", force: :cascade do |t|
     t.datetime "created_at", null: false
